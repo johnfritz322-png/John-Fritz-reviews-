@@ -1,15 +1,15 @@
 John Fritz Reviews Website
 
-How to use:
-1. Open index.html in a browser to preview the website.
-2. Upload the entire folder to any static hosting service such as Netlify, Vercel, GitHub Pages, or your dealership website provider.
-3. Update review links in index.html if you get a direct Google review link.
+Updated:
+- Mobile layout fixed
+- Real storefront photo added
+- Phone: (269) 547-7312
+- Email: johnfritz@lithia.com
 
-Contact info included:
-Phone: (269) 547-7312
-Email: johnfritz@lithia.com
-
-Files:
+Upload/replace these in GitHub:
 - index.html
 - styles.css
 - app.js
+- assets/lithia-storefront.png
+
+Your QR code still works as long as the website URL stays the same.
