@@ -10,6 +10,7 @@ const reviewNextButton = document.querySelector("#review-next");
 const reviewDots = document.querySelector("#review-dots");
 let reviews = [];
 let currentReviewPage = 0;
+let reviewTimer;
 
 const shareUrl = "https://johnfritz322-png.github.io/John-Fritz-reviews-/";
 const shareTitle = "John Fritz Reviews";
@@ -93,7 +94,7 @@ function updateSummary() {
 }
 
 function reviewsPerPage() {
-  return window.matchMedia("(max-width: 900px)").matches ? 1 : 3;
+  return 1;
 }
 
 function filteredReviews() {
@@ -147,6 +148,16 @@ function renderReviews() {
   }
 }
 
+function startReviewRotation() {
+  clearInterval(reviewTimer);
+  reviewTimer = setInterval(() => {
+    const totalPages = Math.max(1, Math.ceil(filteredReviews().length / reviewsPerPage()));
+    if (totalPages <= 1) return;
+    currentReviewPage = (currentReviewPage + 1) % totalPages;
+    renderReviews();
+  }, 3000);
+}
+
 async function loadReviews() {
   try {
     const response = await fetch("reviews.json", { cache: "no-store" });
@@ -160,27 +171,33 @@ async function loadReviews() {
   updateSources();
   updateSummary();
   renderReviews();
+  startReviewRotation();
 }
 
 searchInput.addEventListener("input", () => {
   currentReviewPage = 0;
   renderReviews();
+  startReviewRotation();
 });
 sourceSelect.addEventListener("change", () => {
   currentReviewPage = 0;
   renderReviews();
+  startReviewRotation();
 });
 if (reviewPrevButton) {
   reviewPrevButton.addEventListener("click", () => {
-    currentReviewPage = Math.max(0, currentReviewPage - 1);
+    const totalPages = Math.max(1, Math.ceil(filteredReviews().length / reviewsPerPage()));
+    currentReviewPage = (currentReviewPage - 1 + totalPages) % totalPages;
     renderReviews();
+    startReviewRotation();
   });
 }
 if (reviewNextButton) {
   reviewNextButton.addEventListener("click", () => {
     const totalPages = Math.max(1, Math.ceil(filteredReviews().length / reviewsPerPage()));
-    currentReviewPage = Math.min(totalPages - 1, currentReviewPage + 1);
+    currentReviewPage = (currentReviewPage + 1) % totalPages;
     renderReviews();
+    startReviewRotation();
   });
 }
 if (reviewDots) {
@@ -189,6 +206,7 @@ if (reviewDots) {
     if (!button) return;
     currentReviewPage = Number(button.dataset.reviewPage) || 0;
     renderReviews();
+    startReviewRotation();
   });
 }
 window.addEventListener("resize", renderReviews);
