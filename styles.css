@@ -14,14 +14,14 @@
 html{scroll-behavior:smooth}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);overflow-x:hidden}
 a{color:inherit}
-.site-header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:14px clamp(16px,5vw,72px);background:rgba(4,18,34,.96);color:#fff;border-bottom:1px solid rgba(255,255,255,.1);backdrop-filter:blur(10px)}
+.site-header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px clamp(16px,5vw,72px);background:rgba(4,18,34,.96);color:#fff;border-bottom:1px solid rgba(255,255,255,.1);backdrop-filter:blur(10px)}
 .brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
 .brand-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:8px;background:#1469dc;font-weight:800}
 .brand strong,.brand small{display:block;line-height:1.2}
 .brand small{color:#c8d6ea;margin-top:3px;font-size:13px}
-.nav{display:flex;align-items:center;gap:22px;font-weight:700}
-.nav a{color:#fff;text-decoration:none;opacity:.92}
-.nav a:hover{opacity:1}
+.nav{display:flex;align-items:center;gap:18px;font-weight:700;overflow-x:auto;white-space:nowrap}
+.nav a,.nav button{appearance:none;border:0;background:transparent;color:#fff;text-decoration:none;opacity:.92;font:inherit;font-weight:700;cursor:pointer;padding:0}
+.nav a:hover,.nav button:hover{opacity:1}
 .header-contact{display:flex;gap:10px;align-items:center}
 .header-call{background:var(--blue);color:#fff;text-decoration:none;font-weight:800;padding:12px 18px;border-radius:8px;white-space:nowrap}
 .secondary-call{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.45)}
