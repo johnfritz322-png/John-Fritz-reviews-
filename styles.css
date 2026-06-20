@@ -117,31 +117,60 @@ blockquote{margin:0 0 20px;color:#f1f6ff;font-size:18px;line-height:1.55;flex:1}
   .footer{grid-template-columns:1fr}
 }
 @media(max-width:560px){
-  .site-header{position:relative;padding:14px}
-  .brand{width:100%}
-  .brand small{font-size:12px}
-  .nav{justify-content:center;padding-bottom:2px;font-size:13px}
-  .nav .inventory-link{flex:1 1 calc(50% - 10px)}
+  .site-header{position:relative;display:grid;grid-template-columns:1fr;gap:12px;padding:12px;background:#061322}
+  .brand{width:100%;justify-content:center;text-align:left}
+  .brand-mark{width:38px;height:38px}
+  .brand strong{font-size:16px}
+  .brand small{font-size:11px}
+  .nav{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;padding-bottom:0;font-size:12px}
+  .nav a,.nav button{min-height:42px;display:flex;align-items:center;justify-content:center;padding:8px 10px;border:1px solid rgba(255,255,255,.16);border-radius:8px;background:#0d1a2b;text-align:center;line-height:1.15}
+  .nav .inventory-link{flex:auto}
   .header-contact{width:100%;display:grid;grid-template-columns:1fr 1fr}
-  .header-call{text-align:center}
-  .hero{min-height:540px;padding:52px 18px 72px}
+  .header-call{min-height:46px;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px}
+  .hero{min-height:430px;padding:34px 16px 54px;align-items:end}
   .hero-photo{object-position:center top}
-  h1{font-size:44px}
-  .hero-text{font-size:17px}
+  .hero-shade{background:linear-gradient(180deg,rgba(4,18,34,.28) 0%,rgba(4,18,34,.62) 34%,rgba(4,18,34,.94) 100%)}
+  .hero-content{max-width:none}
+  .eyebrow{font-size:11px;line-height:1.25;margin-bottom:9px}
+  h1{font-size:36px;line-height:1;margin-bottom:12px}
+  h2{font-size:28px;line-height:1.08}
+  h3{font-size:20px}
+  .hero-text{font-size:16px;line-height:1.42;margin-bottom:16px}
+  .rating-row{gap:8px;margin-bottom:18px}
   .hero-actions .btn,.review-buttons .btn{width:100%}
-  .trust-strip,.split-section,.share-section,.reviews-section,.leave-review{width:calc(100% - 24px)}
+  .hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .btn{min-height:46px;padding:12px 14px}
+  .trust-strip,.split-section,.share-section,.reviews-section,.leave-review{width:calc(100% - 20px)}
+  .trust-strip{grid-template-columns:1fr 1fr;margin:-30px auto 28px}
+  .trust-strip div{padding:16px 12px;text-align:center;border-right:1px solid var(--line);border-bottom:0}
+  .trust-strip strong{font-size:24px}
+  .trust-strip span{font-size:12px;line-height:1.25}
+  .split-section{margin-bottom:34px}
+  .split-section>div:first-child p:not(.eyebrow){font-size:16px;line-height:1.5}
+  .reviews-section{margin-bottom:34px}
+  .section-heading{margin-bottom:16px}
+  .section-heading>span{width:54px;height:3px;margin-bottom:10px}
   .profile-card{grid-template-columns:1fr}
   .profile-photo{width:100%;max-width:none;height:auto;aspect-ratio:16 / 9}
+  .share-section{margin-bottom:36px}
+  .share-grid{gap:16px}
+  .share-card,.referral-form{padding:18px;border-radius:8px}
+  .profile-copy p:last-child{font-size:14px;line-height:1.45}
   .referral-form{grid-template-columns:1fr}
+  .referral-form input,.referral-form textarea{min-height:46px;font-size:16px}
   .referral-form button{width:100%}
-  .review-card{padding:19px}
+  .review-card{min-height:230px;padding:18px}
   .carousel-controls{display:grid;grid-template-columns:1fr;justify-items:stretch}
   .carousel-dots{min-width:0}
   .review-top{display:block}
   .review-top time{display:block;margin-top:8px}
   .stars{font-size:20px;letter-spacing:1px}
   blockquote{font-size:16px}
-  .leave-review{padding:24px}
+  .reviewer{padding-top:14px}
+  .worked-with,.source-note{font-size:12px}
+  .leave-review{padding:20px;margin-bottom:34px}
+  .leave-review h2{font-size:26px}
+  .review-buttons{display:grid;grid-template-columns:1fr;gap:10px}
   .footer{grid-template-columns:1fr;padding:26px 18px}
   .footer-btn{width:100%}
 }
