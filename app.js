@@ -155,7 +155,7 @@ function startReviewRotation() {
     if (totalPages <= 1) return;
     currentReviewPage = (currentReviewPage + 1) % totalPages;
     renderReviews();
-  }, 3000);
+  }, 6000);
 }
 
 async function loadReviews() {
