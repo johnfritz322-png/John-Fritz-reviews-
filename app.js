@@ -6,6 +6,7 @@ const reviewCount = document.querySelector("#review-count");
 const ratingSummary = document.querySelector("#rating-summary");
 const sharePageButton = document.querySelector("#share-page");
 const referralForm = document.querySelector("#john-referral");
+const textReferralButton = document.querySelector("#text-referral");
 const reviewPrevButton = document.querySelector("#review-prev");
 const reviewNextButton = document.querySelector("#review-next");
 const reviewDots = document.querySelector("#review-dots");
@@ -78,9 +79,8 @@ if (sharePageButton) {
   });
 }
 
-if (referralForm) {
-  referralForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+function referralTextUrl() {
+  if (!referralForm) return "sms:+12695477312";
     const formData = new FormData(referralForm);
     const yourName = String(formData.get("your_name") || "").trim();
     const friendName = String(formData.get("friend_name") || "").trim();
@@ -94,8 +94,22 @@ if (referralForm) {
       vehicleInterest ? `What they are looking for: ${vehicleInterest}` : "",
       "Can you reach out when you have a chance? Thank you!"
     ].filter(Boolean).join("\n");
+  const separator = /iPad|iPhone|iPod|Macintosh/i.test(navigator.userAgent) ? "&" : "?";
+  return `sms:+12695477312${separator}body=${encodeURIComponent(message)}`;
+}
 
-    window.location.href = `sms:+12695477312?&body=${encodeURIComponent(message)}`;
+function textReferralToJohn() {
+  window.location.href = referralTextUrl();
+}
+
+if (textReferralButton) {
+  textReferralButton.addEventListener("click", textReferralToJohn);
+}
+
+if (referralForm) {
+  referralForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    textReferralToJohn();
   });
 }
 
