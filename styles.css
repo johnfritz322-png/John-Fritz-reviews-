@@ -56,6 +56,7 @@ h3{font-size:18px;margin-bottom:6px}
 .feature-list p{color:var(--muted);line-height:1.55;margin-bottom:0}
 .share-section{margin-bottom:54px}
 .share-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.share-heading{grid-column:1 / -1;margin:4px 0 2px}
 .share-card,.referral-form{background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:0 14px 32px rgba(0,0,0,.24);padding:24px}
 .share-card p,.referral-form p{color:var(--muted);line-height:1.55}
 .profile-card{grid-column:1 / -1;display:grid;gap:20px;align-items:start}
