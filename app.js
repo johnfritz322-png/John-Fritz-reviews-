@@ -20,8 +20,28 @@ const shareTitle = "John Fritz Reviews";
 const shareText = "John Fritz at Lithia Chrysler Jeep Dodge Ram of Billings has helped a lot of customers. Here is his review page and contact info.";
 const profilePhotos = [
   {
-    src: "assets/john-fritz-feature.jpg",
+    src: "assets/john-fritz-slide-01.jpg",
     alt: "John Fritz standing in front of a red Dodge Challenger at Lithia"
+  },
+  {
+    src: "assets/john-fritz-slide-02.jpg",
+    alt: "John Fritz with family at Beartooth Pass"
+  },
+  {
+    src: "assets/john-fritz-slide-03.jpg",
+    alt: "White dog wearing orange sunglasses"
+  },
+  {
+    src: "assets/john-fritz-slide-04.jpg",
+    alt: "John Fritz on a boat near a lighthouse"
+  },
+  {
+    src: "assets/john-fritz-slide-05.jpg",
+    alt: "Young child smiling outside"
+  },
+  {
+    src: "assets/john-fritz-slide-06.jpg",
+    alt: "John Fritz with family at an indoor event"
   }
 ];
 
