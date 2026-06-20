@@ -124,6 +124,7 @@ function initials(name) {
 }
 
 function updateSources() {
+  if (!sourceSelect) return;
   const sources = [...new Set(reviews.map((review) => review.source).filter(Boolean))].sort();
   sourceSelect.innerHTML = '<option value="all">All sources</option>' + sources.map((source) => (
     `<option value="${escapeHtml(source)}">${escapeHtml(source)}</option>`
@@ -144,8 +145,8 @@ function reviewsPerPage() {
 }
 
 function filteredReviews() {
-  const query = searchInput.value.trim().toLowerCase();
-  const source = sourceSelect.value;
+  const query = searchInput ? searchInput.value.trim().toLowerCase() : "";
+  const source = sourceSelect ? sourceSelect.value : "all";
   return reviews.filter((review) => {
     const haystack = [
       review.name,
@@ -220,16 +221,20 @@ async function loadReviews() {
   startReviewRotation();
 }
 
-searchInput.addEventListener("input", () => {
-  currentReviewPage = 0;
-  renderReviews();
-  startReviewRotation();
-});
-sourceSelect.addEventListener("change", () => {
-  currentReviewPage = 0;
-  renderReviews();
-  startReviewRotation();
-});
+if (searchInput) {
+  searchInput.addEventListener("input", () => {
+    currentReviewPage = 0;
+    renderReviews();
+    startReviewRotation();
+  });
+}
+if (sourceSelect) {
+  sourceSelect.addEventListener("change", () => {
+    currentReviewPage = 0;
+    renderReviews();
+    startReviewRotation();
+  });
+}
 if (reviewPrevButton) {
   reviewPrevButton.addEventListener("click", () => {
     const totalPages = Math.max(1, Math.ceil(filteredReviews().length / reviewsPerPage()));
