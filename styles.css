@@ -81,7 +81,7 @@ h3{font-size:18px;margin-bottom:6px}
 .review-top{display:flex;justify-content:space-between;gap:12px;align-items:start;margin-bottom:18px}
 .review-top .stars{font-size:19px}
 .review-top time{color:var(--muted);font-size:14px;white-space:nowrap}
-blockquote{margin:0 0 20px;color:#26384c;font-size:17px;line-height:1.45;flex:1}
+blockquote{margin:0 0 20px;color:#f1f6ff;font-size:18px;line-height:1.55;flex:1}
 .reviewer{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:18px}
 .avatar{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:var(--blue);color:#fff;font-weight:900}
 .reviewer strong,.reviewer small{display:block}
