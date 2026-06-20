@@ -169,7 +169,14 @@
         </label>
       </div>
 
-      <div id="review-grid" class="review-grid" aria-live="polite"></div>
+      <div class="review-carousel" aria-label="Customer review slider">
+        <div id="review-grid" class="review-grid" aria-live="polite"></div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="review-prev" type="button" aria-label="Show previous reviews">Previous</button>
+          <div class="carousel-dots" id="review-dots" aria-label="Review pages"></div>
+          <button class="carousel-btn" id="review-next" type="button" aria-label="Show next reviews">Next</button>
+        </div>
+      </div>
       <p id="empty-state" class="empty-state" hidden>No reviews match that search.</p>
     </section>
 
@@ -332,6 +339,6 @@
   }
 ]
   </script>
-  <script src="app.js?v=10"></script>
+  <script src="app.js?v=11"></script>
 </body>
 </html>

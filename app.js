@@ -5,7 +5,11 @@ const sourceSelect = document.querySelector("#review-source");
 const reviewCount = document.querySelector("#review-count");
 const ratingSummary = document.querySelector("#rating-summary");
 const sharePageButton = document.querySelector("#share-page");
+const reviewPrevButton = document.querySelector("#review-prev");
+const reviewNextButton = document.querySelector("#review-next");
+const reviewDots = document.querySelector("#review-dots");
 let reviews = [];
+let currentReviewPage = 0;
 
 const shareUrl = "https://johnfritz322-png.github.io/John-Fritz-reviews-/";
 const shareTitle = "John Fritz Reviews";
@@ -55,6 +59,7 @@ function escapeHtml(value) {
 
 function formatDate(value) {
   if (!value) return "";
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
   return new Intl.DateTimeFormat("en-US", {
     month: "long",
     day: "numeric",
@@ -87,10 +92,14 @@ function updateSummary() {
   ratingSummary.textContent = total ? `${average.toFixed(1)} average from public reviews` : "Reviews coming soon";
 }
 
-function renderReviews() {
+function reviewsPerPage() {
+  return window.matchMedia("(max-width: 900px)").matches ? 1 : 3;
+}
+
+function filteredReviews() {
   const query = searchInput.value.trim().toLowerCase();
   const source = sourceSelect.value;
-  const filtered = reviews.filter((review) => {
+  return reviews.filter((review) => {
     const haystack = [
       review.name,
       review.source,
@@ -100,12 +109,20 @@ function renderReviews() {
     ].join(" ").toLowerCase();
     return (!query || haystack.includes(query)) && (source === "all" || review.source === source);
   });
+}
 
-  reviewGrid.innerHTML = filtered.map((review) => `
+function renderReviews() {
+  const filtered = filteredReviews();
+  const perPage = reviewsPerPage();
+  const totalPages = Math.max(1, Math.ceil(filtered.length / perPage));
+  currentReviewPage = Math.min(currentReviewPage, totalPages - 1);
+  const pageReviews = filtered.slice(currentReviewPage * perPage, (currentReviewPage + 1) * perPage);
+
+  reviewGrid.innerHTML = pageReviews.map((review) => `
     <article class="review-card">
       <div class="review-top">
         <span class="stars" aria-label="${escapeHtml(review.rating)} stars">${stars(review.rating)}</span>
-        <time datetime="${escapeHtml(review.date)}">${escapeHtml(formatDate(review.date))}</time>
+        <time datetime="${/^\d{4}-\d{2}-\d{2}$/.test(review.date || "") ? escapeHtml(review.date) : ""}">${escapeHtml(formatDate(review.date))}</time>
       </div>
       <blockquote>&ldquo;${escapeHtml(review.text)}&rdquo;</blockquote>
       <div class="reviewer">
@@ -121,6 +138,13 @@ function renderReviews() {
   `).join("");
 
   emptyState.hidden = filtered.length !== 0;
+  if (reviewPrevButton) reviewPrevButton.disabled = currentReviewPage === 0 || filtered.length === 0;
+  if (reviewNextButton) reviewNextButton.disabled = currentReviewPage >= totalPages - 1 || filtered.length === 0;
+  if (reviewDots) {
+    reviewDots.innerHTML = Array.from({ length: totalPages }, (_, index) => `
+      <button class="carousel-dot${index === currentReviewPage ? " active" : ""}" type="button" aria-label="Show review page ${index + 1}" data-review-page="${index}"></button>
+    `).join("");
+  }
 }
 
 async function loadReviews() {
@@ -138,6 +162,34 @@ async function loadReviews() {
   renderReviews();
 }
 
-searchInput.addEventListener("input", renderReviews);
-sourceSelect.addEventListener("change", renderReviews);
+searchInput.addEventListener("input", () => {
+  currentReviewPage = 0;
+  renderReviews();
+});
+sourceSelect.addEventListener("change", () => {
+  currentReviewPage = 0;
+  renderReviews();
+});
+if (reviewPrevButton) {
+  reviewPrevButton.addEventListener("click", () => {
+    currentReviewPage = Math.max(0, currentReviewPage - 1);
+    renderReviews();
+  });
+}
+if (reviewNextButton) {
+  reviewNextButton.addEventListener("click", () => {
+    const totalPages = Math.max(1, Math.ceil(filteredReviews().length / reviewsPerPage()));
+    currentReviewPage = Math.min(totalPages - 1, currentReviewPage + 1);
+    renderReviews();
+  });
+}
+if (reviewDots) {
+  reviewDots.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-review-page]");
+    if (!button) return;
+    currentReviewPage = Number(button.dataset.reviewPage) || 0;
+    renderReviews();
+  });
+}
+window.addEventListener("resize", renderReviews);
 loadReviews();
