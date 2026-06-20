@@ -9,15 +9,16 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#top">
+    <a class="brand" href="#top" aria-label="John Fritz Reviews home">
       <span class="brand-mark">JF</span>
       <span>
         <strong>John Fritz Reviews</strong>
         <small>Lithia Chrysler Jeep Dodge Ram of Billings</small>
       </span>
     </a>
-    <nav class="nav">
+    <nav class="nav" aria-label="Main navigation">
       <a href="#reviews">Reviews</a>
+      <a href="#process">Experience</a>
       <a href="#leave-review">Leave a Review</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -26,13 +27,15 @@
 
   <main id="top">
     <section class="hero">
+      <img class="hero-photo" src="assets/dealership-background.jpg" alt="Lithia Chrysler Jeep Dodge Ram of Billings dealership exterior" />
+      <div class="hero-shade"></div>
       <div class="hero-content">
         <p class="eyebrow">Customer-first sales help in Billings, Montana</p>
-        <h1>Real customer reviews for <span>John Fritz.</span></h1>
-        <p class="hero-text">See what customers are saying, then leave your own review after your purchase or visit.</p>
+        <h1>Real reviews for John Fritz.</h1>
+        <p class="hero-text">Read verified public testimonials, then leave your own review after your purchase or visit.</p>
         <div class="rating-row">
-          <span class="stars">★★★★★</span>
-          <strong>5.0 out of 5</strong>
+          <span class="stars" aria-label="5 stars">★★★★★</span>
+          <strong id="rating-summary">5.0 average from public reviews</strong>
         </div>
         <div class="hero-actions">
           <a class="btn primary" href="#reviews">Read Reviews</a>
@@ -41,54 +44,74 @@
       </div>
     </section>
 
-    <section class="info-card">
-      <div class="info-block">
-        <div class="icon">✓</div>
-        <div>
-          <h2>Verified public reviews</h2>
-          <p>Reviews below were found from public DealerRater pages that list John Fritz as an employee worked with.</p>
-          <a href="https://www.dealerrater.com/sales/John-Fritz-review-891723/" target="_blank" rel="noopener">View source</a>
-        </div>
+    <section class="trust-strip" aria-label="Review highlights">
+      <div>
+        <strong id="review-count">3</strong>
+        <span>public reviews loaded</span>
       </div>
-      <div class="divider"></div>
-      <div class="info-block">
-        <div class="icon">🤝</div>
-        <div>
-          <h2>Simple, friendly, pressure-free help</h2>
-          <p>John helps customers shop new and used Chrysler, Dodge, Jeep, and Ram vehicles in Billings, Montana.</p>
-        </div>
+      <div>
+        <strong>5.0</strong>
+        <span>average rating shown</span>
+      </div>
+      <div>
+        <strong>Billings</strong>
+        <span>local CDJR sales help</span>
+      </div>
+    </section>
+
+    <section id="process" class="split-section">
+      <div>
+        <p class="eyebrow">Why customers mention John</p>
+        <h2>Friendly help without the pressure.</h2>
+        <p>From first look to final paperwork, this page is built around the things shoppers care about most: clear communication, quick follow-up, and a smooth buying process.</p>
+      </div>
+      <div class="feature-list">
+        <article>
+          <span>✓</span>
+          <div>
+            <h3>Verified-source ready</h3>
+            <p>The reviews below load from a data file, so you can add Google or DealerRater reviews without rebuilding the page.</p>
+          </div>
+        </article>
+        <article>
+          <span>★</span>
+          <div>
+            <h3>Mobile-first layout</h3>
+            <p>Cards, buttons, and contact links stay clean on phones, tablets, and desktops.</p>
+          </div>
+        </article>
+        <article>
+          <span>→</span>
+          <div>
+            <h3>Easy next step</h3>
+            <p>Customers can call, text, email, or leave a review from clear action buttons.</p>
+          </div>
+        </article>
       </div>
     </section>
 
     <section id="reviews" class="reviews-section">
       <div class="section-heading">
         <span></span>
-        <h2>Customer Testimonials</h2>
-        <p>Public reviews mentioning John</p>
+        <p class="eyebrow">Customer Testimonials</p>
+        <h2>Public reviews mentioning John</h2>
       </div>
 
-      <div class="review-grid">
-        <article class="review-card">
-          <div class="review-top"><span class="stars">★★★★★</span><time>June 5, 2026</time></div>
-          <blockquote>“Willing to go the extra mile to help close a deal. Always greeted with a smile and update on sales progress.”</blockquote>
-          <div class="reviewer"><div class="avatar">S</div><div><strong>Seven7High2002</strong><small>Sales Visit - Used</small></div></div>
-          <p class="worked-with">Employees worked with: John Fritz</p>
-        </article>
-
-        <article class="review-card">
-          <div class="review-top"><span class="stars">★★★★★</span><time>March 24, 2026</time></div>
-          <blockquote>“Purchased 2 vehicles brand new from Lithia Dodge and have always had a very friendly and pain free process!”</blockquote>
-          <div class="reviewer"><div class="avatar">B</div><div><strong>brooksbeler</strong><small>Sales Visit - New</small></div></div>
-          <p class="worked-with">Employees worked with: John Fritz</p>
-        </article>
-
-        <article class="review-card">
-          <div class="review-top"><span class="stars">★★★★★</span><time>February 1, 2026</time></div>
-          <blockquote>“Great to work with, quick, all the team was friendly and got me into the vehicle I wanted.”</blockquote>
-          <div class="reviewer"><div class="avatar">K</div><div><strong>KWD</strong><small>Sales Visit - Used</small></div></div>
-          <p class="worked-with">Employees worked with: John Fritz</p>
-        </article>
+      <div class="toolbar">
+        <label>
+          <span>Search reviews</span>
+          <input id="review-search" type="search" placeholder="Search by name, source, or review text" />
+        </label>
+        <label>
+          <span>Source</span>
+          <select id="review-source">
+            <option value="all">All sources</option>
+          </select>
+        </label>
       </div>
+
+      <div id="review-grid" class="review-grid" aria-live="polite"></div>
+      <p id="empty-state" class="empty-state" hidden>No reviews match that search.</p>
     </section>
 
     <section id="leave-review" class="leave-review">
@@ -105,12 +128,52 @@
   </main>
 
   <footer id="contact" class="footer">
-    <div><strong>Lithia Chrysler Jeep Dodge Ram of Billings</strong><p>2229 King Ave W, Billings, MT 59102</p></div>
-    <div><strong>Call / Text John</strong><p><a href="tel:12695477312">(269) 547-7312</a></p></div>
-    <div><strong>Email John</strong><p><a href="mailto:johnfritz@lithia.com">johnfritz@lithia.com</a></p></div>
+    <div>
+      <strong>Lithia Chrysler Jeep Dodge Ram of Billings</strong>
+      <p>2229 King Ave W, Billings, MT 59102</p>
+    </div>
+    <div>
+      <strong>Call / Text John</strong>
+      <p><a href="tel:12695477312">(269) 547-7312</a></p>
+    </div>
+    <div>
+      <strong>Email John</strong>
+      <p><a href="mailto:johnfritz@lithia.com">johnfritz@lithia.com</a></p>
+    </div>
     <a class="btn footer-btn" href="#leave-review">Leave a Review</a>
   </footer>
 
+  <script id="reviews-data" type="application/json">
+[
+  {
+    "name": "Seven7High2002",
+    "rating": 5,
+    "date": "2026-06-05",
+    "source": "DealerRater",
+    "visitType": "Sales Visit - Used",
+    "text": "Willing to go the extra mile to help close a deal. Always greeted with a smile and update on sales progress.",
+    "workedWith": "John Fritz"
+  },
+  {
+    "name": "brooksbeler",
+    "rating": 5,
+    "date": "2026-03-24",
+    "source": "DealerRater",
+    "visitType": "Sales Visit - New",
+    "text": "Purchased 2 vehicles brand new from Lithia Dodge and have always had a very friendly and pain free process!",
+    "workedWith": "John Fritz"
+  },
+  {
+    "name": "KWD",
+    "rating": 5,
+    "date": "2026-02-01",
+    "source": "DealerRater",
+    "visitType": "Sales Visit - Used",
+    "text": "Great to work with, quick, all the team was friendly and got me into the vehicle I wanted.",
+    "workedWith": "John Fritz"
+  }
+]
+  </script>
   <script src="app.js"></script>
 </body>
 </html>

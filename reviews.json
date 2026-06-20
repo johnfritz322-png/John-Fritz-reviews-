@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Seven7High2002",
+    "rating": 5,
+    "date": "2026-06-05",
+    "source": "DealerRater",
+    "visitType": "Sales Visit - Used",
+    "text": "Willing to go the extra mile to help close a deal. Always greeted with a smile and update on sales progress.",
+    "workedWith": "John Fritz"
+  },
+  {
+    "name": "brooksbeler",
+    "rating": 5,
+    "date": "2026-03-24",
+    "source": "DealerRater",
+    "visitType": "Sales Visit - New",
+    "text": "Purchased 2 vehicles brand new from Lithia Dodge and have always had a very friendly and pain free process!",
+    "workedWith": "John Fritz"
+  },
+  {
+    "name": "KWD",
+    "rating": 5,
+    "date": "2026-02-01",
+    "source": "DealerRater",
+    "visitType": "Sales Visit - Used",
+    "text": "Great to work with, quick, all the team was friendly and got me into the vehicle I wanted.",
+    "workedWith": "John Fritz"
+  }
+]
