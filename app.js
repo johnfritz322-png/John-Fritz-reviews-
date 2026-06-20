@@ -8,13 +8,22 @@ const sharePageButton = document.querySelector("#share-page");
 const reviewPrevButton = document.querySelector("#review-prev");
 const reviewNextButton = document.querySelector("#review-next");
 const reviewDots = document.querySelector("#review-dots");
+const profilePhoto = document.querySelector("#profile-photo");
 let reviews = [];
 let currentReviewPage = 0;
 let reviewTimer;
+let currentProfilePhoto = 0;
+let profilePhotoTimer;
 
 const shareUrl = "https://johnfritz322-png.github.io/John-Fritz-reviews-/";
 const shareTitle = "John Fritz Reviews";
 const shareText = "John Fritz at Lithia Chrysler Jeep Dodge Ram of Billings has helped a lot of customers. Here is his review page and contact info.";
+const profilePhotos = [
+  {
+    src: "assets/john-fritz-feature.jpg",
+    alt: "John Fritz standing in front of a red Dodge Challenger at Lithia"
+  }
+];
 
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {
@@ -46,6 +55,23 @@ if (sharePageButton) {
       window.location.href = `mailto:?subject=${encodeURIComponent(shareTitle)}&body=${encodeURIComponent(`${shareText}\n\n${shareUrl}`)}`;
     }
   });
+}
+
+function renderProfilePhoto() {
+  if (!profilePhoto || profilePhotos.length === 0) return;
+  const photo = profilePhotos[currentProfilePhoto % profilePhotos.length];
+  profilePhoto.src = photo.src;
+  profilePhoto.alt = photo.alt;
+}
+
+function startProfilePhotoRotation() {
+  clearInterval(profilePhotoTimer);
+  renderProfilePhoto();
+  profilePhotoTimer = setInterval(() => {
+    if (profilePhotos.length <= 1) return;
+    currentProfilePhoto = (currentProfilePhoto + 1) % profilePhotos.length;
+    renderProfilePhoto();
+  }, 6000);
 }
 
 function escapeHtml(value) {
@@ -89,7 +115,7 @@ function updateSummary() {
   const average = total
     ? reviews.reduce((sum, review) => sum + (Number(review.rating) || 0), 0) / total
     : 0;
-  reviewCount.textContent = String(total);
+  if (reviewCount) reviewCount.textContent = String(total);
   ratingSummary.textContent = total ? `${average.toFixed(1)} average from public reviews` : "Reviews coming soon";
 }
 
@@ -210,4 +236,5 @@ if (reviewDots) {
   });
 }
 window.addEventListener("resize", renderReviews);
+startProfilePhotoRotation();
 loadReviews();
