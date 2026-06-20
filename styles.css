@@ -55,6 +55,9 @@ h3{font-size:18px;margin-bottom:6px}
 .share-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
 .share-card,.referral-form{background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:0 14px 32px rgba(0,0,0,.24);padding:24px}
 .share-card p,.referral-form p{color:var(--muted);line-height:1.55}
+.profile-card{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center}
+.profile-photo{width:120px;aspect-ratio:1;border-radius:8px;object-fit:cover;background:#111e30;border:1px solid var(--line)}
+.placeholder-photo{display:grid;place-items:center;color:#fff;font-size:40px;font-weight:900;background:linear-gradient(135deg,#1469dc,#071d33)}
 .action-list{display:grid;gap:12px;margin-top:18px}
 .action-list .btn{width:100%}
 .btn.secondary.dark{color:var(--ink);background:#111e30;border-color:var(--line);box-shadow:none}
@@ -118,6 +121,8 @@ blockquote{margin:0 0 20px;color:#f1f6ff;font-size:18px;line-height:1.55;flex:1}
   .hero-text{font-size:17px}
   .hero-actions .btn,.review-buttons .btn{width:100%}
   .trust-strip,.split-section,.share-section,.reviews-section,.leave-review{width:calc(100% - 24px)}
+  .profile-card{grid-template-columns:1fr}
+  .profile-photo{width:100%;max-width:180px}
   .referral-form{grid-template-columns:1fr}
   .referral-form button{width:100%}
   .review-card{padding:19px}
