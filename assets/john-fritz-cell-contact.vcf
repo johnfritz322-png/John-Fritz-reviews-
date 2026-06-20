@@ -1,0 +1,7 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:John Fritz
+N:Fritz;John;;;
+TEL;TYPE=CELL:+12695477312
+EMAIL;TYPE=WORK:johnfritz@lithia.com
+END:VCARD
