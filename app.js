@@ -4,7 +4,12 @@ const searchInput = document.querySelector("#review-search");
 const sourceSelect = document.querySelector("#review-source");
 const reviewCount = document.querySelector("#review-count");
 const ratingSummary = document.querySelector("#rating-summary");
+const sharePageButton = document.querySelector("#share-page");
 let reviews = [];
+
+const shareUrl = "https://johnfritz322-png.github.io/John-Fritz-reviews-/";
+const shareTitle = "John Fritz Reviews";
+const shareText = "John Fritz at Lithia Chrysler Jeep Dodge Ram of Billings has helped a lot of customers. Here is his review page and contact info.";
 
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {
@@ -14,6 +19,29 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     target.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
+
+if (sharePageButton) {
+  sharePageButton.addEventListener("click", async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: shareTitle, text: shareText, url: shareUrl });
+        return;
+      } catch (error) {
+        if (error.name === "AbortError") return;
+      }
+    }
+
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      sharePageButton.textContent = "Link Copied";
+      setTimeout(() => {
+        sharePageButton.textContent = "Share This Page";
+      }, 1800);
+    } catch (error) {
+      window.location.href = `mailto:?subject=${encodeURIComponent(shareTitle)}&body=${encodeURIComponent(`${shareText}\n\n${shareUrl}`)}`;
+    }
+  });
+}
 
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, (char) => ({
@@ -36,7 +64,7 @@ function formatDate(value) {
 
 function stars(rating) {
   const count = Math.max(0, Math.min(5, Number(rating) || 0));
-  return "★★★★★".slice(0, count);
+  return "\u2605\u2605\u2605\u2605\u2605".slice(0, count);
 }
 
 function initials(name) {
@@ -79,7 +107,7 @@ function renderReviews() {
         <span class="stars" aria-label="${escapeHtml(review.rating)} stars">${stars(review.rating)}</span>
         <time datetime="${escapeHtml(review.date)}">${escapeHtml(formatDate(review.date))}</time>
       </div>
-      <blockquote>“${escapeHtml(review.text)}”</blockquote>
+      <blockquote>&ldquo;${escapeHtml(review.text)}&rdquo;</blockquote>
       <div class="reviewer">
         <div class="avatar">${escapeHtml(initials(review.name))}</div>
         <div>

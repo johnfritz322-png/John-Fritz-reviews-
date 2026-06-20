@@ -44,13 +44,26 @@ h3{font-size:18px;margin-bottom:6px}
 .trust-strip div:last-child{border-right:0}
 .trust-strip strong{display:block;font-size:30px;line-height:1;color:var(--navy)}
 .trust-strip span{display:block;color:var(--muted);margin-top:7px;font-weight:700}
-.split-section,.reviews-section,.leave-review{width:min(1120px,calc(100% - 32px));margin:0 auto}
+.split-section,.share-section,.reviews-section,.leave-review{width:min(1120px,calc(100% - 32px));margin:0 auto}
 .split-section{display:grid;grid-template-columns:.9fr 1.1fr;gap:42px;align-items:start;margin-bottom:50px}
 .split-section>div:first-child p:not(.eyebrow){color:var(--muted);font-size:18px;line-height:1.6}
 .feature-list{display:grid;gap:16px}
 .feature-list article{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:20px;background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:0 12px 26px rgba(8,31,57,.07)}
 .feature-list span{width:44px;height:44px;display:grid;place-items:center;border-radius:8px;background:#eaf3ff;color:var(--blue);font-weight:900;font-size:24px}
 .feature-list p{color:var(--muted);line-height:1.55;margin-bottom:0}
+.share-section{margin-bottom:54px}
+.share-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.share-card,.referral-form{background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:0 14px 32px rgba(8,31,57,.09);padding:24px}
+.share-card p,.referral-form p{color:var(--muted);line-height:1.55}
+.action-list{display:grid;gap:12px;margin-top:18px}
+.action-list .btn{width:100%}
+.btn.secondary.dark{color:var(--navy);background:#fff;border-color:var(--line);box-shadow:none}
+.referral-form{grid-column:1 / -1;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.referral-form>div{grid-column:1 / -1}
+.referral-form label{display:grid;gap:7px;color:var(--muted);font-weight:800;font-size:13px}
+.referral-form input,.referral-form textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);font:inherit}
+.referral-form textarea{resize:vertical}
+.referral-form button{justify-self:start}
 .reviews-section{margin-bottom:48px}
 .section-heading{text-align:center;margin-bottom:24px}
 .section-heading>span{display:block;width:70px;height:4px;background:var(--blue);border-radius:999px;margin:0 auto 12px}
@@ -72,7 +85,7 @@ blockquote{margin:0 0 20px;color:#26384c;font-size:17px;line-height:1.45;flex:1}
 .empty-state{text-align:center;color:var(--muted);font-weight:800;padding:28px}
 .leave-review{margin-bottom:56px;padding:34px;border-radius:8px;color:#fff;background:linear-gradient(135deg,var(--navy),var(--navy-2));display:flex;justify-content:space-between;align-items:center;gap:22px}
 .leave-review p:not(.eyebrow){color:#d9e6f7;margin-bottom:0}
-.footer{display:grid;grid-template-columns:1.7fr 1fr 1fr auto;gap:24px;align-items:center;padding:28px clamp(18px,6vw,90px);background:#041222;color:#fff}
+.footer{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:24px;align-items:center;padding:28px clamp(18px,6vw,90px);background:#041222;color:#fff}
 .footer p{color:#c9d7e8;margin:6px 0 0}
 .footer a{color:inherit}
 @media(max-width:900px){
@@ -80,7 +93,7 @@ blockquote{margin:0 0 20px;color:#26384c;font-size:17px;line-height:1.45;flex:1}
   .nav{order:3;width:100%;justify-content:center;gap:18px;font-size:14px}
   .hero{min-height:560px}
   .hero-shade{background:linear-gradient(180deg,rgba(4,18,34,.82) 0%,rgba(4,18,34,.72) 58%,rgba(4,18,34,.58) 100%)}
-  .trust-strip,.split-section,.toolbar,.review-grid{grid-template-columns:1fr}
+  .trust-strip,.split-section,.share-grid,.toolbar,.review-grid{grid-template-columns:1fr}
   .trust-strip div{border-right:0;border-bottom:1px solid var(--line)}
   .trust-strip div:last-child{border-bottom:0}
   .leave-review{flex-direction:column;align-items:stretch}
@@ -97,7 +110,9 @@ blockquote{margin:0 0 20px;color:#26384c;font-size:17px;line-height:1.45;flex:1}
   h1{font-size:44px}
   .hero-text{font-size:17px}
   .hero-actions .btn,.review-buttons .btn{width:100%}
-  .trust-strip,.split-section,.reviews-section,.leave-review{width:calc(100% - 24px)}
+  .trust-strip,.split-section,.share-section,.reviews-section,.leave-review{width:calc(100% - 24px)}
+  .referral-form{grid-template-columns:1fr}
+  .referral-form button{width:100%}
   .review-card{padding:19px}
   .review-top{display:block}
   .review-top time{display:block;margin-top:8px}

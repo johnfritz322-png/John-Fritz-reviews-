@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Customer reviews and testimonials for John Fritz at Lithia Chrysler Jeep Dodge Ram of Billings." />
+  <meta name="description" content="Honest customer reviews and easy contact options for John Fritz at Lithia Chrysler Jeep Dodge Ram of Billings." />
   <title>John Fritz Reviews | Lithia CDJR Billings</title>
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=5" />
 </head>
 <body>
   <header class="site-header">
@@ -19,6 +19,7 @@
     <nav class="nav" aria-label="Main navigation">
       <a href="#reviews">Reviews</a>
       <a href="#process">Experience</a>
+      <a href="#share">Share</a>
       <a href="#leave-review">Leave a Review</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -32,14 +33,14 @@
       <div class="hero-content">
         <p class="eyebrow">Customer-first sales help in Billings, Montana</p>
         <h1>Real reviews for John Fritz.</h1>
-        <p class="hero-text">Read verified public testimonials, then leave your own review after your purchase or visit.</p>
+        <p class="hero-text">Read honest public reviews, then share John's info with someone shopping for a vehicle.</p>
         <div class="rating-row">
-          <span class="stars" aria-label="5 stars">★★★★★</span>
+          <span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
           <strong id="rating-summary">5.0 average from public reviews</strong>
         </div>
         <div class="hero-actions">
           <a class="btn primary" href="#reviews">Read Reviews</a>
-          <a class="btn secondary" href="#leave-review">Leave a Review</a>
+          <a class="btn secondary" href="#share">Share John's Info</a>
         </div>
       </div>
     </section>
@@ -67,34 +68,91 @@
       </div>
       <div class="feature-list">
         <article>
-          <span>✓</span>
+          <span>&#10003;</span>
           <div>
             <h3>Verified-source ready</h3>
             <p>The reviews below load from a data file, so you can add Google or DealerRater reviews without rebuilding the page.</p>
           </div>
         </article>
         <article>
-          <span>★</span>
+          <span>&#9733;</span>
           <div>
             <h3>Mobile-first layout</h3>
             <p>Cards, buttons, and contact links stay clean on phones, tablets, and desktops.</p>
           </div>
         </article>
         <article>
-          <span>→</span>
+          <span>&rarr;</span>
           <div>
             <h3>Easy next step</h3>
-            <p>Customers can call, text, email, or leave a review from clear action buttons.</p>
+            <p>Customers can call, text, email, share the page, or leave a review from clear action buttons.</p>
           </div>
         </article>
+      </div>
+    </section>
+
+    <section id="share" class="share-section">
+      <div class="section-heading">
+        <span></span>
+        <p class="eyebrow">Share John's Info</p>
+        <h2>Send this page to someone shopping for a vehicle</h2>
+      </div>
+
+      <div class="share-grid">
+        <article class="share-card">
+          <h3>Quick share</h3>
+          <p>Send John's page, contact info, or inventory link in a couple taps.</p>
+          <div class="action-list">
+            <button class="btn primary" id="share-page" type="button">Share This Page</button>
+            <a class="btn secondary dark" href="sms:?&body=I%20wanted%20to%20send%20you%20John%20Fritz%27s%20review%20page%20at%20Lithia%20CDJR%20Billings%3A%20https%3A%2F%2Fjohnfritz322-png.github.io%2FJohn-Fritz-reviews-%2F">Text John's Info</a>
+            <a class="btn secondary dark" href="mailto:?subject=John%20Fritz%20at%20Lithia%20CDJR%20Billings&body=Here%27s%20John%20Fritz%27s%20review%20page%20and%20contact%20info%3A%0A%0Ahttps%3A%2F%2Fjohnfritz322-png.github.io%2FJohn-Fritz-reviews-%2F%0A%0ACall%20or%20text%3A%20%28269%29%20547-7312%0AEmail%3A%20johnfritz%40lithia.com">Email to a Friend</a>
+            <a class="btn secondary dark" href="assets/john-fritz-contact.vcf" download>Save Contact</a>
+          </div>
+        </article>
+
+        <article class="share-card">
+          <h3>Shopping help</h3>
+          <p>Use these if someone is ready to look at vehicles or wants John to follow up.</p>
+          <div class="action-list">
+            <a class="btn primary" href="tel:12695477312">Call / Text John</a>
+            <a class="btn secondary dark" href="mailto:johnfritz@lithia.com?subject=Vehicle%20shopping%20help&body=Hi%20John%2C%0A%0AI%27m%20interested%20in%20getting%20help%20with%20a%20vehicle.%0A%0AName%3A%0APhone%3A%0AVehicle%20or%20budget%3A">Ask John for Help</a>
+            <a class="btn secondary dark" href="https://www.lithiachryslerjeepdodgeofbillings.com/" target="_blank" rel="noopener">Browse Inventory</a>
+          </div>
+        </article>
+
+        <form class="referral-form" name="john-referral" method="POST" action="mailto:johnfritz@lithia.com" enctype="text/plain" data-netlify="true">
+          <input type="hidden" name="form-name" value="john-referral" />
+          <div>
+            <p class="eyebrow">Send a lead</p>
+            <h3>Refer a friend to John</h3>
+            <p>This opens an email with the details on GitHub Pages. If you move to Netlify, the same form can be saved directly.</p>
+          </div>
+          <label>
+            Your name
+            <input name="your_name" type="text" autocomplete="name" />
+          </label>
+          <label>
+            Friend's name
+            <input name="friend_name" type="text" />
+          </label>
+          <label>
+            Friend's phone or email
+            <input name="friend_contact" type="text" />
+          </label>
+          <label>
+            What are they looking for?
+            <textarea name="vehicle_interest" rows="4"></textarea>
+          </label>
+          <button class="btn primary" type="submit">Send Referral</button>
+        </form>
       </div>
     </section>
 
     <section id="reviews" class="reviews-section">
       <div class="section-heading">
         <span></span>
-        <p class="eyebrow">Customer Testimonials</p>
-        <h2>Public reviews mentioning John</h2>
+        <p class="eyebrow">Honest Reviews</p>
+        <h2>What customers are saying</h2>
       </div>
 
       <div class="toolbar">
@@ -117,12 +175,13 @@
     <section id="leave-review" class="leave-review">
       <div>
         <p class="eyebrow">Had a good experience?</p>
-        <h2>Leave John a review</h2>
-        <p>Your feedback helps future customers feel confident before they visit.</p>
+        <h2>Pick where you want to review John</h2>
+        <p>Choose the site you prefer. Each button opens the review page in a new tab.</p>
       </div>
       <div class="review-buttons">
-        <a class="btn primary" href="https://www.dealerrater.com/consumer/writereviews/39934?source=drp" target="_blank" rel="noopener">DealerRater Review</a>
-        <a class="btn secondary" href="https://www.google.com/search?q=Lithia+Chrysler+Jeep+Dodge+Ram+of+Billings+reviews" target="_blank" rel="noopener">Google Reviews</a>
+        <a class="btn primary" href="https://www.dealerrater.com/consumer/writereviews/39934?source=drp" target="_blank" rel="noopener">DealerRater</a>
+        <a class="btn secondary" href="https://www.google.com/search?q=Lithia+Chrysler+Jeep+Dodge+Ram+of+Billings+reviews" target="_blank" rel="noopener">Google</a>
+        <a class="btn secondary" href="https://www.yelp.com/search?find_desc=Lithia+Chrysler+Jeep+Dodge+Ram+of+Billings&find_loc=Billings%2C+MT" target="_blank" rel="noopener">Yelp</a>
       </div>
     </section>
   </main>
@@ -140,7 +199,6 @@
       <strong>Email John</strong>
       <p><a href="mailto:johnfritz@lithia.com">johnfritz@lithia.com</a></p>
     </div>
-    <a class="btn footer-btn" href="#leave-review">Leave a Review</a>
   </footer>
 
   <script id="reviews-data" type="application/json">
@@ -174,6 +232,6 @@
   }
 ]
   </script>
-  <script src="app.js"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>
