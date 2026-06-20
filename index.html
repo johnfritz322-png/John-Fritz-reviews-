@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Honest customer reviews and easy contact options for John Fritz at Lithia Chrysler Jeep Dodge Ram of Billings." />
   <title>John Fritz Reviews | Lithia CDJR Billings</title>
-  <link rel="stylesheet" href="styles.css?v=25" />
+  <link rel="stylesheet" href="styles.css?v=26" />
 </head>
 <body>
   <header class="site-header">
@@ -17,11 +17,11 @@
       </span>
     </a>
     <nav class="nav" aria-label="Main navigation">
-      <button id="share-page" type="button">Share Page</button>
-      <a href="mailto:?subject=John%20Fritz%20at%20Lithia%20CDJR%20Billings&body=Here%27s%20John%20Fritz%27s%20review%20page%20and%20contact%20info%3A%0A%0Ahttps%3A%2F%2Fjohnfritz322-png.github.io%2FJohn-Fritz-reviews-%2F%0A%0ACall%20or%20text%3A%20%28269%29%20547-7312%0AEmail%3A%20johnfritz%40lithia.com">Email Info</a>
-      <a href="assets/john-fritz-contact.vcf" download>Save Contact</a>
       <a href="https://www.lithiadodgebillings.com/new-inventory/index.htm" target="_blank" rel="noopener">New Inventory</a>
       <a href="https://www.lithiadodgebillings.com/used-inventory/index.htm" target="_blank" rel="noopener">Used Inventory</a>
+      <button id="share-page" type="button">Share Page</button>
+      <a href="mailto:?subject=John%20Fritz%20at%20Lithia%20CDJR%20Billings&body=Here%27s%20John%20Fritz%27s%20review%20page%20and%20contact%20info%3A%0A%0Ahttps%3A%2F%2Fjohnfritz322-png.github.io%2FJohn-Fritz-reviews-%2F%0A%0ACall%20or%20text%3A%20%28269%29%20547-7312%0AEmail%3A%20johnfritz%40lithia.com">Email Information</a>
+      <a href="assets/john-fritz-contact.vcf" download>Save Contact</a>
       <a href="#leave-review">Leave Review</a>
     </nav>
     <div class="header-contact" aria-label="Contact John">
@@ -105,12 +105,20 @@
             <p>Fill this out and it will open a text to John with the details ready to send.</p>
           </div>
           <label>
-            Your name
-            <input name="your_name" type="text" autocomplete="name" />
+            Your first name
+            <input name="your_first_name" type="text" autocomplete="given-name" />
           </label>
           <label>
-            Friend's name
-            <input name="friend_name" type="text" />
+            Your last name
+            <input name="your_last_name" type="text" autocomplete="family-name" />
+          </label>
+          <label>
+            Friend's first name
+            <input name="friend_first_name" type="text" />
+          </label>
+          <label>
+            Friend's last name
+            <input name="friend_last_name" type="text" />
           </label>
           <label>
             Friend's phone or email
@@ -356,6 +364,6 @@
   }
 ]
   </script>
-  <script src="app.js?v=22"></script>
+  <script src="app.js?v=23"></script>
 </body>
 </html>
