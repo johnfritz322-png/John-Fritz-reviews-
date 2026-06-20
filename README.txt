@@ -5,7 +5,8 @@ Files to upload:
 - styles.css
 - app.js
 - reviews.json
-- assets/dealership-hero.png
+- assets/dealership-background.jpg
+- assets/john-fritz-contact.vcf
 
 How reviews work:
 - The page reads review cards from reviews.json.
@@ -16,6 +17,11 @@ Google reviews:
 - Google Places API usually returns only a small sample of reviews.
 - To export many real reviews, use the Google Business Profile API if you have access to the verified business profile.
 - If you can download or copy your Google reviews into a CSV, use tools/convert-reviews-csv.js to convert them into reviews.json.
+
+Sharing and referrals:
+- The Share section includes buttons for texting, emailing, saving John's contact, browsing inventory, and sending a referral email.
+- On GitHub Pages, the referral form opens the visitor's email app.
+- On Netlify, the same form can be saved as a real form submission because it includes data-netlify="true".
 
 Local preview note:
 - You can open index.html directly for a quick preview.

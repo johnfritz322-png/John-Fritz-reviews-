@@ -45,7 +45,8 @@ h3{font-size:18px;margin-bottom:6px}
 .trust-strip strong{display:block;font-size:30px;line-height:1;color:var(--ink)}
 .trust-strip span{display:block;color:var(--muted);margin-top:7px;font-weight:700}
 .split-section,.share-section,.reviews-section,.leave-review{width:min(1120px,calc(100% - 32px));margin:0 auto}
-.split-section{display:grid;grid-template-columns:.9fr 1.1fr;gap:42px;align-items:start;margin-bottom:50px}
+.split-section{display:block;text-align:center;margin-bottom:50px}
+.split-section>div:first-child{max-width:760px;margin:0 auto}
 .split-section>div:first-child p:not(.eyebrow){color:var(--muted);font-size:18px;line-height:1.6}
 .feature-list{display:grid;gap:16px}
 .feature-list article{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:20px;background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:0 12px 26px rgba(0,0,0,.22)}
@@ -56,8 +57,8 @@ h3{font-size:18px;margin-bottom:6px}
 .share-card,.referral-form{background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:0 14px 32px rgba(0,0,0,.24);padding:24px}
 .share-card p,.referral-form p{color:var(--muted);line-height:1.55}
 .profile-card{grid-column:1 / -1;display:grid;gap:20px;align-items:start}
-.profile-photo{width:100%;height:680px;border-radius:8px;object-fit:cover;object-position:center 44%;background:#111e30;border:1px solid var(--line)}
-.full-profile-photo{object-fit:cover}
+.profile-photo{display:block;width:100%;height:680px;border-radius:8px;object-fit:contain;object-position:center;background:#050a12;border:1px solid var(--line)}
+.full-profile-photo{object-fit:contain}
 .profile-copy{max-width:760px;margin:0 auto;text-align:center}
 .placeholder-photo{display:grid;place-items:center;color:#fff;font-size:40px;font-weight:900;background:linear-gradient(135deg,#1469dc,#071d33)}
 .action-list{display:grid;gap:12px;margin-top:18px}
@@ -124,7 +125,7 @@ blockquote{margin:0 0 20px;color:#f1f6ff;font-size:18px;line-height:1.55;flex:1}
   .hero-actions .btn,.review-buttons .btn{width:100%}
   .trust-strip,.split-section,.share-section,.reviews-section,.leave-review{width:calc(100% - 24px)}
   .profile-card{grid-template-columns:1fr}
-  .profile-photo{width:100%;max-width:none;height:560px}
+  .profile-photo{width:100%;max-width:none;height:auto;aspect-ratio:16 / 9}
   .referral-form{grid-template-columns:1fr}
   .referral-form button{width:100%}
   .review-card{padding:19px}

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Honest customer reviews and easy contact options for John Fritz at Lithia Chrysler Jeep Dodge Ram of Billings." />
   <title>John Fritz Reviews | Lithia CDJR Billings</title>
-  <link rel="stylesheet" href="styles.css?v=18" />
+  <link rel="stylesheet" href="styles.css?v=20" />
 </head>
 <body>
   <header class="site-header">
@@ -56,34 +56,42 @@
       </div>
     </section>
 
+    <section id="reviews" class="reviews-section">
+      <div class="section-heading">
+        <span></span>
+        <p class="eyebrow">Honest Reviews</p>
+        <h2>What customers are saying</h2>
+      </div>
+
+      <div class="toolbar">
+        <label>
+          <span>Search reviews</span>
+          <input id="review-search" type="search" placeholder="Search by name, source, or review text" />
+        </label>
+        <label>
+          <span>Source</span>
+          <select id="review-source">
+            <option value="all">All sources</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="review-carousel" aria-label="Customer review slider">
+        <div id="review-grid" class="review-grid" aria-live="polite"></div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="review-prev" type="button" aria-label="Show previous review">Previous</button>
+          <div class="carousel-dots" id="review-dots" aria-label="Review pages"></div>
+          <button class="carousel-btn" id="review-next" type="button" aria-label="Show next review">Next</button>
+        </div>
+      </div>
+      <p id="empty-state" class="empty-state" hidden>No reviews match that search.</p>
+    </section>
+
     <section id="process" class="split-section">
       <div>
         <p class="eyebrow">Why customers mention John</p>
         <h2>Friendly help without the pressure.</h2>
         <p>From first look to final paperwork, this page is built around the things shoppers care about most: clear communication, quick follow-up, and a smooth buying process.</p>
-      </div>
-      <div class="feature-list">
-        <article>
-          <span>&#10003;</span>
-          <div>
-            <h3>Verified-source ready</h3>
-            <p>The reviews below load from a data file, so you can add Google or DealerRater reviews without rebuilding the page.</p>
-          </div>
-        </article>
-        <article>
-          <span>&#9733;</span>
-          <div>
-            <h3>Mobile-first layout</h3>
-            <p>Cards, buttons, and contact links stay clean on phones, tablets, and desktops.</p>
-          </div>
-        </article>
-        <article>
-          <span>&rarr;</span>
-          <div>
-            <h3>Easy next step</h3>
-            <p>Customers can call, text, email, share the page, or leave a review from clear action buttons.</p>
-          </div>
-        </article>
       </div>
     </section>
 
@@ -151,37 +159,6 @@
           <button class="btn primary" type="submit">Send Referral</button>
         </form>
       </div>
-    </section>
-
-    <section id="reviews" class="reviews-section">
-      <div class="section-heading">
-        <span></span>
-        <p class="eyebrow">Honest Reviews</p>
-        <h2>What customers are saying</h2>
-      </div>
-
-      <div class="toolbar">
-        <label>
-          <span>Search reviews</span>
-          <input id="review-search" type="search" placeholder="Search by name, source, or review text" />
-        </label>
-        <label>
-          <span>Source</span>
-          <select id="review-source">
-            <option value="all">All sources</option>
-          </select>
-        </label>
-      </div>
-
-      <div class="review-carousel" aria-label="Customer review slider">
-        <div id="review-grid" class="review-grid" aria-live="polite"></div>
-        <div class="carousel-controls">
-          <button class="carousel-btn" id="review-prev" type="button" aria-label="Show previous review">Previous</button>
-          <div class="carousel-dots" id="review-dots" aria-label="Review pages"></div>
-          <button class="carousel-btn" id="review-next" type="button" aria-label="Show next review">Next</button>
-        </div>
-      </div>
-      <p id="empty-state" class="empty-state" hidden>No reviews match that search.</p>
     </section>
 
     <section id="leave-review" class="leave-review">
@@ -424,6 +401,6 @@
   }
 ]
   </script>
-  <script src="app.js?v=17"></script>
+  <script src="app.js?v=18"></script>
 </body>
 </html>

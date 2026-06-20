@@ -1,5 +1,86 @@
 [
   {
+    "name": "Patrick Daly",
+    "rating": 5,
+    "date": "2 months ago",
+    "source": "Google",
+    "visitType": "Customer Review",
+    "text": "John Fritz was easy to deal with and to the point. Highly recommended.",
+    "workedWith": "John Fritz"
+  },
+  {
+    "name": "Maggie Beler",
+    "rating": 5,
+    "date": "2 months ago",
+    "source": "Google",
+    "visitType": "Customer Review",
+    "text": "Had a nice and hassle-free experience with Lithia, in large part because of John Fritz. John was so friendly and made the whole day pain free!",
+    "workedWith": "John Fritz"
+  },
+  {
+    "name": "Mikalya Yuzicappi",
+    "rating": 5,
+    "date": "2 months ago",
+    "source": "Google",
+    "visitType": "Customer Review",
+    "text": "Great experience! Very welcoming, friendly, patient and helpful! Thank You John Fritz for helping us out in our new chapter :)",
+    "workedWith": "John Fritz"
+  },
+  {
+    "name": "Keith Belgarde",
+    "rating": 5,
+    "date": "2 months ago",
+    "source": "Google",
+    "visitType": "Customer Review",
+    "text": "John Fritz was helpful with us choosing new vehicle. Recommended him. Good vibes",
+    "workedWith": "John Fritz"
+  },
+  {
+    "name": "Emily Dawn",
+    "rating": 5,
+    "date": "3 months ago",
+    "source": "Google",
+    "visitType": "Customer Review",
+    "text": "john rocks",
+    "workedWith": "John Fritz"
+  },
+  {
+    "name": "Jacy Nunn",
+    "rating": 5,
+    "date": "3 months ago",
+    "source": "Google",
+    "visitType": "Customer Review",
+    "text": "Highly recommend going to see John Fitz! Thank you John Fitz for helping me get in my new ford today!",
+    "workedWith": "John Fritz"
+  },
+  {
+    "name": "Melissa Kibler",
+    "rating": 5,
+    "date": "3 months ago",
+    "source": "Google",
+    "visitType": "Customer Review",
+    "text": "John Fritz is the man!! Thanks a million times for the help in getting us into a newer vehicle today!",
+    "workedWith": "John Fritz"
+  },
+  {
+    "name": "Vassar Hurt",
+    "rating": 5,
+    "date": "3 months ago",
+    "source": "Google",
+    "visitType": "Customer Review",
+    "text": "Amazing experience working with John Fritz. Highly recommend.",
+    "workedWith": "John Fritz"
+  },
+  {
+    "name": "Flarpen Cough",
+    "rating": 5,
+    "date": "3 months ago",
+    "source": "Google",
+    "visitType": "Customer Review",
+    "text": "John was amazing to work with",
+    "workedWith": "John Fritz"
+  },
+  {
     "name": "Remi A.",
     "rating": 5,
     "date": "3 months ago",
