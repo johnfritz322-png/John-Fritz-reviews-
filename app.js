@@ -5,6 +5,7 @@ const sourceSelect = document.querySelector("#review-source");
 const reviewCount = document.querySelector("#review-count");
 const ratingSummary = document.querySelector("#rating-summary");
 const sharePageButton = document.querySelector("#share-page");
+const referralForm = document.querySelector("#john-referral");
 const reviewPrevButton = document.querySelector("#review-prev");
 const reviewNextButton = document.querySelector("#review-next");
 const reviewDots = document.querySelector("#review-dots");
@@ -74,6 +75,27 @@ if (sharePageButton) {
     } catch (error) {
       window.location.href = `mailto:?subject=${encodeURIComponent(shareTitle)}&body=${encodeURIComponent(`${shareText}\n\n${shareUrl}`)}`;
     }
+  });
+}
+
+if (referralForm) {
+  referralForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const formData = new FormData(referralForm);
+    const yourName = String(formData.get("your_name") || "").trim();
+    const friendName = String(formData.get("friend_name") || "").trim();
+    const friendContact = String(formData.get("friend_contact") || "").trim();
+    const vehicleInterest = String(formData.get("vehicle_interest") || "").trim();
+    const message = [
+      "Hi John, I have someone who may want your help with a vehicle.",
+      yourName ? `My name: ${yourName}` : "",
+      friendName ? `Their name: ${friendName}` : "",
+      friendContact ? `Their phone/email: ${friendContact}` : "",
+      vehicleInterest ? `What they are looking for: ${vehicleInterest}` : "",
+      "Can you reach out when you have a chance? Thank you!"
+    ].filter(Boolean).join("\n");
+
+    window.location.href = `sms:+12695477312?&body=${encodeURIComponent(message)}`;
   });
 }
 
