@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Honest customer reviews and easy contact options for John Fritz at Lithia Chrysler Jeep Dodge Ram of Billings." />
   <title>John Fritz Reviews | Lithia CDJR Billings</title>
-  <link rel="stylesheet" href="styles.css?v=29" />
+  <link rel="stylesheet" href="styles.css?v=30" />
 </head>
 <body>
   <header class="site-header">
@@ -28,8 +28,8 @@
       <div class="hero-shade"></div>
       <div class="hero-content">
         <p class="eyebrow">Customer-first sales help in Billings, Montana</p>
-        <h1>Real reviews for John Fritz.</h1>
-        <p class="hero-text">Read honest public reviews, then share John's info with someone shopping for a vehicle.</p>
+        <h1>A Better Car-Buying Experience Starts Here.</h1>
+        <p class="hero-text">Explore customer reviews, browse inventory, and contact John when you're ready.</p>
         <div class="rating-row">
           <span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
           <strong id="rating-summary">5.0 average from public reviews</strong>
@@ -43,8 +43,8 @@
         <span>average rating shown</span>
       </div>
       <div>
-        <strong>Local CDJR Sales Professional</strong>
-        <span>real help from a real person</span>
+        <strong>Local Sales Professional</strong>
+        <span>Lithia CDJR of Billings</span>
       </div>
     </section>
 
@@ -69,6 +69,35 @@
       </div>
     </section>
 
+    <section class="visit-planner" aria-labelledby="visit-planner-title">
+      <div class="visit-planner-heading">
+        <p class="eyebrow">Plan a visit</p>
+        <h2 id="visit-planner-title">Find a time that works.</h2>
+        <p>Choose a day and the best part of your day. Your phone will prepare a text to John with the details.</p>
+      </div>
+      <form id="visit-request" class="visit-form">
+        <label>
+          Preferred date
+          <input name="visit_date" type="date" required />
+        </label>
+        <label>
+          Best time
+          <select name="visit_time" required>
+            <option value="">Choose a time</option>
+            <option>Morning</option>
+            <option>Lunch time</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+          </select>
+        </label>
+        <label>
+          Vehicle or question
+          <input name="visit_interest" type="text" placeholder="Example: Used Jeep Grand Cherokee" />
+        </label>
+        <button class="btn primary" id="text-visit-request" type="submit">Text Appointment Request</button>
+      </form>
+    </section>
+
     <section id="share" class="share-section">
       <div class="share-grid">
         <article class="share-card profile-card">
@@ -81,9 +110,19 @@
 
         <div class="section-heading share-heading">
           <span></span>
-          <p class="eyebrow">Share John's Info</p>
-          <h2>Know someone shopping? Send them John's page.</h2>
+          <p class="eyebrow">Ways to connect</p>
+          <h2>Shop, share, or send John a referral.</h2>
         </div>
+
+        <article class="share-card">
+          <h3>Browse inventory</h3>
+          <div class="action-list">
+            <a class="btn primary" href="https://www.lithiadodgebillings.com/new-inventory/index.htm" target="_blank" rel="noopener">New Inventory</a>
+            <a class="btn secondary dark" href="https://www.lithiadodgebillings.com/used-inventory/index.htm" target="_blank" rel="noopener">Used Inventory</a>
+            <a class="btn secondary dark mobile-redundant-contact" href="tel:12695477312">Call John</a>
+            <a class="btn secondary dark mobile-redundant-contact" href="sms:+12695477312">Text John</a>
+          </div>
+        </article>
 
         <article class="share-card">
           <h3>Quick share</h3>
@@ -92,16 +131,6 @@
             <a class="btn secondary dark" href="sms:?&body=Here%27s%20John%20Fritz%27s%20contact%20information%20at%20Lithia%20CDJR%20Billings.%0ACall%20or%20text%3A%20%28269%29%20547-7312">Share John's Info</a>
             <a class="btn secondary dark" href="mailto:?subject=John%20Fritz%20at%20Lithia%20CDJR%20Billings&body=Here%27s%20John%20Fritz%27s%20review%20page%20and%20contact%20info%3A%0A%0Ahttps%3A%2F%2Fjohnfritz322-png.github.io%2FJohn-Fritz-reviews-%2F%0A%0ACall%20or%20text%3A%20%28269%29%20547-7312%0AEmail%3A%20johnfritz%40lithia.com">Email Information</a>
             <a class="btn secondary dark" href="assets/john-fritz-cell-contact.vcf" download="john-fritz-contact.vcf">Save Contact</a>
-          </div>
-        </article>
-
-        <article class="share-card">
-          <h3>Shopping help</h3>
-          <div class="action-list">
-            <a class="btn primary" href="tel:12695477312">Call John</a>
-            <a class="btn secondary dark" href="sms:+12695477312">Text John</a>
-            <a class="btn secondary dark" href="https://www.lithiadodgebillings.com/new-inventory/index.htm" target="_blank" rel="noopener">New Inventory</a>
-            <a class="btn secondary dark" href="https://www.lithiadodgebillings.com/used-inventory/index.htm" target="_blank" rel="noopener">Used Inventory</a>
           </div>
         </article>
 
@@ -364,6 +393,6 @@
   }
 ]
   </script>
-  <script src="app.js?v=27"></script>
+  <script src="app.js?v=28"></script>
 </body>
 </html>
