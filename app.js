@@ -11,6 +11,7 @@ const reviewPrevButton = document.querySelector("#review-prev");
 const reviewNextButton = document.querySelector("#review-next");
 const reviewDots = document.querySelector("#review-dots");
 const profilePhoto = document.querySelector("#profile-photo");
+const visitRequestForm = document.querySelector("#visit-request");
 let reviews = [];
 let currentReviewPage = 0;
 let reviewTimer;
@@ -30,20 +31,8 @@ const profilePhotos = [
     alt: "John Fritz with family at Beartooth Pass"
   },
   {
-    src: "assets/john-fritz-slide-03.jpg",
-    alt: "White dog wearing orange sunglasses"
-  },
-  {
     src: "assets/john-fritz-slide-04.jpg",
     alt: "John Fritz on a boat near a lighthouse"
-  },
-  {
-    src: "assets/john-fritz-slide-05-driving.jpg",
-    alt: "Young child smiling while holding a Ram steering wheel"
-  },
-  {
-    src: "assets/john-fritz-slide-06.jpg",
-    alt: "John Fritz with family at an indoor event"
   }
 ];
 
@@ -111,6 +100,27 @@ if (referralForm) {
   referralForm.addEventListener("submit", (event) => {
     event.preventDefault();
     textReferralToJohn();
+  });
+}
+
+if (visitRequestForm) {
+  visitRequestForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!visitRequestForm.reportValidity()) return;
+    const formData = new FormData(visitRequestForm);
+    const date = String(formData.get("visit_date") || "").trim();
+    const formattedDate = date ? formatDate(date) : "";
+    const time = String(formData.get("visit_time") || "").trim();
+    const interest = String(formData.get("visit_interest") || "").trim();
+    const message = [
+      "Hi John! I'd like to plan a visit.",
+      formattedDate ? `My preferred date is ${formattedDate}` : "",
+      time ? `during the ${time.toLowerCase()}.` : ".",
+      interest ? `I'm interested in: ${interest}.` : "",
+      "Please let me know what works. Thanks!"
+    ].filter(Boolean).join(" ").replace(" .", ".");
+    const separator = /iPad|iPhone|iPod|Macintosh/i.test(navigator.userAgent) ? "&" : "?";
+    window.location.href = `sms:+12695477312${separator}body=${encodeURIComponent(message)}`;
   });
 }
 
