@@ -87,13 +87,14 @@ function referralTextUrl() {
     const friendContact = String(formData.get("friend_contact") || "").trim();
     const vehicleInterest = String(formData.get("vehicle_interest") || "").trim();
     const message = [
-      "Hi John, I have someone who may want your help with a vehicle.",
-      yourName ? `My name: ${yourName}` : "",
-      friendName ? `Their name: ${friendName}` : "",
-      friendContact ? `Their phone/email: ${friendContact}` : "",
-      vehicleInterest ? `What they are looking for: ${vehicleInterest}` : "",
-      "Can you reach out when you have a chance? Thank you!"
-    ].filter(Boolean).join("\n");
+      yourName ? `Hi John! This is ${yourName}.` : "Hi John!",
+      friendName
+        ? `I'd like to refer my friend ${friendName} to you.`
+        : "I'd like to refer a friend to you.",
+      vehicleInterest ? `They're interested in ${vehicleInterest}.` : "",
+      friendContact ? `You can reach them at ${friendContact}.` : "",
+      "When you have a chance, could you get in touch with them? Thanks!"
+    ].filter(Boolean).join(" ");
   const separator = /iPad|iPhone|iPod|Macintosh/i.test(navigator.userAgent) ? "&" : "?";
   return `sms:+12695477312${separator}body=${encodeURIComponent(message)}`;
 }
