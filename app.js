@@ -82,8 +82,14 @@ if (sharePageButton) {
 function referralTextUrl() {
   if (!referralForm) return "sms:+12695477312";
     const formData = new FormData(referralForm);
-    const yourName = String(formData.get("your_name") || "").trim();
-    const friendName = String(formData.get("friend_name") || "").trim();
+    const yourName = ["your_first_name", "your_last_name"]
+      .map((field) => String(formData.get(field) || "").trim())
+      .filter(Boolean)
+      .join(" ");
+    const friendName = ["friend_first_name", "friend_last_name"]
+      .map((field) => String(formData.get(field) || "").trim())
+      .filter(Boolean)
+      .join(" ");
     const friendContact = String(formData.get("friend_contact") || "").trim();
     const vehicleInterest = String(formData.get("vehicle_interest") || "").trim();
     const message = [
